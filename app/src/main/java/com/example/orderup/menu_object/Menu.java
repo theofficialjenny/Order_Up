@@ -1,16 +1,16 @@
-package com.example.orderup.objects;
+package com.example.orderup.menu_object;
 
 public class Menu {
     private String menuID;
     private String menuName;
     private String menuDescription;
     private String menuCategory;
-    private String menuImage;
     private String menuPrice;
     private float menuRating;
+    private int menuImage;
     private int menuOrderCount;
 
-    public Menu(String menuName, String menuDescription, String menuCategory, String menuImage, String menuPrice, float menuRating, int menuOrderCount) {
+    public Menu(String menuName, String menuDescription, String menuCategory, int menuImage, String menuPrice, float menuRating, int menuOrderCount) {
         this.menuName = menuName;
         this.menuDescription = menuDescription;
         this.menuCategory = menuCategory;
@@ -52,11 +52,11 @@ public class Menu {
         this.menuCategory = menuCategory;
     }
 
-    public String getMenuImage() {
+    public int getMenuImage() {
         return menuImage;
     }
 
-    public void setMenuImage(String menuImage) {
+    public void setMenuImage(int menuImage) {
         this.menuImage = menuImage;
     }
 
