@@ -7,7 +7,17 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    tools:context=".Login">
+    tools:context="Login"
+    android:background="@color/white">
+
+
+
+    <ImageView
+        android:id="@+id/login_logo"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:src="@drawable/logo" />
+
 
     <EditText
         android:id="@+id/txt_email"
@@ -30,12 +40,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Login"
+        android:backgroundTint="@color/black"
         android:onClick="openHomeActivity"/>
     <TextView
         android:id="@+id/tv_reg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Register"
-        />
+        android:onClick="openRegisterActivity"/>
 
 </LinearLayout>

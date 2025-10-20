@@ -78,4 +78,8 @@ public class Login extends AppCompatActivity {
     public void openHomeActivity(View view) {
         startActivity(new Intent(this, HomeActivity.class));
     }
+
+    public void openRegisterActivity(View view) {
+        startActivity(new Intent(this, register.class));
+    }
 }

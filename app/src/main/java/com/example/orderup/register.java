@@ -56,7 +56,7 @@ public class register extends AppCompatActivity {
                                     Toast.makeText(register.this,
                                             "User register successfully",
                                             Toast.LENGTH_SHORT).show();
-                                    Intent intent  = new Intent(getApplicationContext(), MainActivity.class);
+                                    Intent intent  = new Intent(getApplicationContext(), HomeActivity.class);
                                     startActivity(intent);
                                     finish();
                                 }else{
@@ -72,5 +72,6 @@ public class register extends AppCompatActivity {
     }
 
     public void openHomeActivity(View view) {
+        startActivity(new Intent(this, HomeActivity.class));
     }
 }

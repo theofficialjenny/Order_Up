@@ -7,7 +7,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    tools:context=".register">
+    tools:context=".register"
+    android:background="@color/white">
 
     <EditText
         android:id="@+id/txt_r_email"
@@ -22,14 +23,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Password"
-        android:inputType="textPassword"
-
-        />
+        android:inputType="textPassword" />
     <Button
         android:id="@+id/btn_reg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Login" />
+        android:text="Login"
+        android:onClick="openHomeActivity"
+        android:backgroundTint="@color/black"/>
 
 
 
