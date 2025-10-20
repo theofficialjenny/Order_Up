@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.OrderUp">
         <activity
+            android:name=".Admin"
+            android:exported="false" />
+        <activity
             android:name=".register"
             android:exported="false" />
         <activity
@@ -23,7 +26,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".DineIn"
             android:exported="false" />
@@ -32,7 +34,7 @@
             android:exported="false" />
         <activity
             android:name=".HomeActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="false" />
