@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="wrap_content"
-    android:layout_height="320dp"
+    android:layout_width="180dp"
+    android:layout_height="wrap_content"
     android:layout_margin="8dp"
-    app:cardElevation="6dp"
-    app:cardBackgroundColor="@color/white"
-    app:cardCornerRadius="8dp">
+    app:cardElevation="4dp"
+    app:cardBackgroundColor="@android:color/white"
+    app:cardCornerRadius="12dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,62 +14,102 @@
         android:orientation="vertical"
         android:padding="12dp">
 
-        <ImageView
-            android:id="@+id/menu_image"
-            android:layout_width="150dp"
-            android:layout_height="200dp"
-            android:src="@drawable/ic_launcher_foreground"
-            android:scaleType="centerCrop"
+        <!-- Optional Tag like 'Popular' -->
+        <TextView
+            android:id="@+id/menu_tag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Popular"
+            android:textSize="12sp"
+            android:textColor="#ffffff"
+            android:background="@drawable/tag_background"
+            android:padding="4dp"
+            android:layout_marginBottom="8dp"
+            android:visibility="gone"
             />
 
-        <View
+        <ImageView
+            android:id="@+id/menu_image"
             android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="#AAAAAA"
-            android:layout_marginVertical="8dp"/>
+            android:layout_height="120dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_launcher_foreground"
+            android:layout_marginBottom="8dp" />
 
         <TextView
             android:id="@+id/menu_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:text="Chicken Burger Promo Pack"
+            android:textSize="16sp"
+            android:textColor="#222222"
             android:textStyle="bold"
-            android:textSize="18sp"
-            android:textColor="@android:color/black"
-            android:text="Menu Item Name" />
+            android:maxLines="2"
+            android:ellipsize="end" />
+
+        <!-- Rating and Order count in a single horizontal row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="4dp"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:src="@drawable/star_icon" />
+
+            <TextView
+                android:id="@+id/menu_rating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4.8 Rating"
+                android:textSize="12sp"
+                android:layout_marginStart="4dp"
+                android:textColor="#FFA000" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" • "
+                android:textSize="12sp"
+                android:textColor="#888888"
+                android:layout_marginStart="4dp" />
+
+            <TextView
+                android:id="@+id/menu_orders"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="150+ Orders"
+                android:textSize="12sp"
+                android:textColor="#888888" />
+
+        </LinearLayout>
 
         <TextView
             android:id="@+id/menu_description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="14sp"
-            android:text="Menu Description" />
+            android:text="Perfect for a tasty and satisfying meal. Easy to add to cart for quick order."
+            android:textSize="12sp"
+            android:textColor="#666666"
+            android:layout_marginTop="8dp"
+            android:maxLines="3"
+            android:ellipsize="end" />
 
-        <TextView
-            android:id="@+id/menu_category"
+        <!-- Add to Cart Button -->
+        <Button
+            android:id="@+id/button_add_to_cart"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="14sp"
-            android:text="Menu Category" />
+            android:layout_height="40dp"
+            android:text="Add to Cart"
+            android:textColor="@android:color/white"
+            android:background="@color/black"
+            android:layout_marginTop="12dp"
+            android:shape="rectangle"
+            android:layout_gravity="center" />
 
-        <TextView
-            android:id="@+id/menu_price"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="14sp"
-            android:text="Menu Price" />
-
-        <TextView
-            android:id="@+id/menu_rating"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="14sp"
-            android:text="Menu Rating" />
-
-        <TextView
-            android:id="@+id/menu_count"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="14sp"
-            android:text="Menu Count" />
     </LinearLayout>
+
 </androidx.cardview.widget.CardView>
