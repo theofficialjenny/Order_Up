@@ -3,9 +3,9 @@ package com.example.orderup.menu_object;
 public class User {
     private String userID;
     private String userName;
-    private String userRole;
+    private Role userRole;
 
-    public User(String userRole, String userName) {
+    public User(Role userRole, String userName) {
         this.userRole = userRole;
         this.userName = userName;
     }
@@ -26,11 +26,11 @@ public class User {
         this.userName = userName;
     }
 
-    public String getUserRole() {
+    public Role getUserRole() {
         return userRole;
     }
 
-    public void setUserRole(String userRole) {
+    public void setUserRole(Role userRole) {
         this.userRole = userRole;
     }
 
