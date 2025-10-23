@@ -33,14 +33,26 @@ public class MenuRVAdapter extends RecyclerView.Adapter<MenuRVHolder> {
         holder.menuImage.setImageResource(menu.getMenuImage());
         holder.menuName.setText(menu.getMenuName());
         holder.menuDescription.setText(menu.getMenuDescription());
-        holder.menuCategory.setText(menu.getMenuCategory());
-        holder.menuPrice.setText(menu.getMenuPrice());
-        holder.menuRating.setText(String.valueOf(menu.getMenuRating()));
-        holder.menuOrderCount.setText(String.valueOf(menu.getMenuOrderCount()));
+        holder.menuRating.setText(menu.getMenuRating() + " Rating");
+        holder.menuOrders.setText(menu.getMenuOrderCount() + "+ Orders");
+        holder.menuCategory.setText("Category: " + menu.getMenuCategory());  // NEW
+        holder.menuPrice.setText(menu.getMenuPrice());                     // NEW
+
+        // Show "Popular" tag if rating > 4.5
+        if (menu.getMenuRating() > 4.5) {
+            holder.menuTag.setVisibility(View.VISIBLE);
+        } else {
+            holder.menuTag.setVisibility(View.GONE);
+        }
+
+        // Add to Cart button click (placeholder - implement cart logic later)
+        holder.buttonAddToCart.setOnClickListener(v -> {
+            // TODO: Add to cart functionality (e.g., show Toast or navigate to CartActivity)
+        });
     }
 
     @Override
-    public int getItemCount()  {
+    public int getItemCount() {
         return menuList != null ? menuList.size() : 0;
     }
 

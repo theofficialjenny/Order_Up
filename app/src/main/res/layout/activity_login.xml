@@ -16,7 +16,7 @@
         android:id="@+id/login_logo"
         android:layout_width="match_parent"
         android:layout_height="300dp"
-        android:src="@drawable/finalLogo" />
+        android:src="@drawable/final_logo" />
 
 
     <EditText
