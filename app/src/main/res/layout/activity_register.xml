@@ -15,23 +15,28 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="User email"
-        android:inputType="textEmailAddress"
+        android:inputType="textEmailAddress" />
 
-        />
     <EditText
         android:id="@+id/txt_r_pass"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Password"
         android:inputType="textPassword" />
+
+    <Spinner
+        android:id="@+id/spinner_role"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/user_roles"
+        android:layout_marginTop="16dp" />
+
     <Button
         android:id="@+id/btn_reg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Login"
-        android:onClick="openHomeActivity"
-        android:backgroundTint="@color/black"/>
-
-
+        android:text="Register"
+        android:backgroundTint="@color/black"
+        android:layout_marginTop="16dp" />
 
 </LinearLayout>

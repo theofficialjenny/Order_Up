@@ -64,8 +64,7 @@ public class HomeActivity extends AppCompatActivity {
     // Removed redundant openHomeActivity (already on Home)
 
     public void openCartActivity(View view) {
-        // TODO: Implement CartActivity (e.g., startActivity(new Intent(this, CartActivity.class));)
-        // For now, show a placeholder Toast or navigate
+        startActivity(new Intent(this, CartActivity.class));
     }
 
     public void openDineInActivity(View view) {
@@ -74,4 +73,5 @@ public class HomeActivity extends AppCompatActivity {
 
     public void openHomeActivity(View view) {
     }
+
 }

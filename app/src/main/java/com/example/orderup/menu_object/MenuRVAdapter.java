@@ -3,13 +3,16 @@ package com.example.orderup.menu_object;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.orderup.CartManager;
 import com.example.orderup.R;
 
 import java.util.List;
+import java.util.Objects;
 
 public class MenuRVAdapter extends RecyclerView.Adapter<MenuRVHolder> {
     private List<Menu> menuList;
@@ -47,7 +50,8 @@ public class MenuRVAdapter extends RecyclerView.Adapter<MenuRVHolder> {
 
         // Add to Cart button click (placeholder - implement cart logic later)
         holder.buttonAddToCart.setOnClickListener(v -> {
-            // TODO: Add to cart functionality (e.g., show Toast or navigate to CartActivity)
+            CartManager.getInstance().addToCart(menu);
+            Toast.makeText(Objects.requireNonNull(holder.itemView).getContext(), "Added to cart", Toast.LENGTH_SHORT).show();
         });
     }
 
