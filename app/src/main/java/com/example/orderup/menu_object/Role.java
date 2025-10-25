@@ -1,7 +1,7 @@
 package com.example.orderup.menu_object;
 
 public enum Role {
-    user,
+    customer,
     admin,
     waiter
 }

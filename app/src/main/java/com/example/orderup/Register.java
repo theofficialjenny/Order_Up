@@ -74,7 +74,7 @@ public class Register extends AppCompatActivity {
                                 if(task.isSuccessful()){
                                     String userID = task.getResult().getUser().getUid();
 
-                                    User user = new User(name, Role.user);
+                                    User user = new User(name, Role.customer);
                                     usersRef.document(userID).set(user)
                                             .addOnSuccessListener(documentReference -> Toast.makeText(Register.this, "User added!", Toast.LENGTH_SHORT).show())
                                             .addOnFailureListener(e -> Toast.makeText(Register.this, "Error adding user", Toast.LENGTH_SHORT).show());

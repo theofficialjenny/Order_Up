@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "849821331663",
+    "project_id": "orderup-25f59",
+    "storage_bucket": "orderup-25f59.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:849821331663:android:7cb0e8b5eea3af2fae47ba",
+        "android_client_info": {
+          "package_name": "com.example.orderup"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC82CRsZX_qJeEc6zbgQSHV7juDpfqVpDc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
