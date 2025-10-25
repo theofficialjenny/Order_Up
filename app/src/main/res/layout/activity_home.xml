@@ -45,6 +45,7 @@
         android:text="Best Offers"/>
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerBestOffer"
         android:layout_width="match_parent"
         android:layout_marginTop="16dp"
         android:layout_height="0dp"
@@ -63,7 +64,7 @@
         android:text="Our Populars"/>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerItem"
+        android:id="@+id/recyclerPopular"
         android:layout_width="match_parent"
         android:layout_marginTop="16dp"
         android:layout_height="0dp"

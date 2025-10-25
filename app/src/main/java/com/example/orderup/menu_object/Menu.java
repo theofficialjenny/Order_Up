@@ -7,10 +7,10 @@ public class Menu {
     private String menuCategory;
     private String menuPrice;
     private float menuRating;
-    private int menuImage;
+    private String menuImage;
     private int menuOrderCount;
 
-    public Menu(String menuName, String menuDescription, String menuCategory, int menuImage, String menuPrice, float menuRating, int menuOrderCount) {
+    public Menu(String menuName, String menuDescription, String menuCategory, String menuImage, String menuPrice, float menuRating, int menuOrderCount) {
         this.menuName = menuName;
         this.menuDescription = menuDescription;
         this.menuCategory = menuCategory;
@@ -18,6 +18,10 @@ public class Menu {
         this.menuPrice = menuPrice;
         this.menuRating = menuRating;
         this.menuOrderCount = menuOrderCount;
+    }
+
+    public Menu(){
+
     }
 
     public String getMenuID() {
@@ -52,11 +56,11 @@ public class Menu {
         this.menuCategory = menuCategory;
     }
 
-    public int getMenuImage() {
+    public String getMenuImage() {
         return menuImage;
     }
 
-    public void setMenuImage(int menuImage) {
+    public void setMenuImage(String menuImage) {
         this.menuImage = menuImage;
     }
 

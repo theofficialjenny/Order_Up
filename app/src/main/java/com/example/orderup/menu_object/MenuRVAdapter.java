@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.orderup.R;
 
 import java.util.List;
@@ -30,7 +31,10 @@ public class MenuRVAdapter extends RecyclerView.Adapter<MenuRVHolder> {
     public void onBindViewHolder(@NonNull MenuRVHolder holder, int position) {
         Menu menu = menuList.get(position);
 
-        holder.menuImage.setImageResource(menu.getMenuImage());
+        Glide.with(holder.itemView.getContext())
+                .load(menu.getMenuImage())
+                .into(holder.menuImage);
+
         holder.menuName.setText(menu.getMenuName());
         holder.menuDescription.setText(menu.getMenuDescription());
         holder.menuCategory.setText(menu.getMenuCategory());
@@ -40,7 +44,7 @@ public class MenuRVAdapter extends RecyclerView.Adapter<MenuRVHolder> {
     }
 
     @Override
-    public int getItemCount()  {
+    public int getItemCount() {
         return menuList != null ? menuList.size() : 0;
     }
 
