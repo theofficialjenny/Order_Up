@@ -1,21 +1,12 @@
 package com.example.orderup.menu_object;
 
 public class User {
-    private String userID;
     private String userName;
     private Role userRole;
 
-    public User(Role userRole, String userName) {
-        this.userRole = userRole;
+    public User(String userName, Role userRole) {
         this.userName = userName;
-    }
-
-    public String getUserID() {
-        return userID;
-    }
-
-    public void setUserID(String userID) {
-        this.userID = userID;
+        this.userRole = userRole;
     }
 
     public String getUserName() {
@@ -37,8 +28,7 @@ public class User {
     @Override
     public String toString() {
         return "User{" +
-                "userID='" + userID + '\'' +
-                ", userName='" + userName + '\'' +
+                "userName='" + userName + '\'' +
                 ", userRole='" + userRole + '\'' +
                 '}';
     }

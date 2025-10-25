@@ -15,7 +15,7 @@
             android:name=".Admin"
             android:exported="false" />
         <activity
-            android:name=".register"
+            android:name=".Register"
             android:exported="false" />
         <activity
             android:name=".Login"

@@ -80,6 +80,6 @@ public class Login extends AppCompatActivity {
     }
 
     public void openRegisterActivity(View view) {
-        startActivity(new Intent(this, register.class));
+        startActivity(new Intent(this, Register.class));
     }
 }
