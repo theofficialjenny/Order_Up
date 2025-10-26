@@ -45,37 +45,46 @@ public class Login extends AppCompatActivity {
         tv_reg = findViewById(R.id.tv_reg);
         mAuth = FirebaseAuth.getInstance();
         btnLogin = findViewById(R.id.btn_login);
+
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String email, password;
-                email = txt_email.getText().toString();
-                password = txt_pass.getText().toString();
+                String email = txt_email.getText().toString().trim();
+                String password = txt_pass.getText().toString().trim();
+
+                if (email.isEmpty() || password.isEmpty()) {
+                    Toast.makeText(Login.this, "Please fill in all fields", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
                 mAuth.signInWithEmailAndPassword(email, password)
                         .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
-                                if(task.isSuccessful()){
+                                if (task.isSuccessful()) {
+                                    if (email.equalsIgnoreCase("admin@admin.co.nz")) {
+                                        Toast.makeText(Login.this, "Welcome Admin!", Toast.LENGTH_SHORT).show();
+                                        startActivity(new Intent(Login.this, Admin.class));
+                                    }
+                                    else if (email.equalsIgnoreCase("waiter@waiter.co.nz")) {
+                                        Toast.makeText(Login.this, "Welcome Waiter!", Toast.LENGTH_SHORT).show();
+                                        startActivity(new Intent(Login.this, WaiterActivity.class));
+                                    }
+                                    else {
+                                        Toast.makeText(Login.this, "Login successful!", Toast.LENGTH_SHORT).show();
+                                        startActivity(new Intent(Login.this, HomeActivity.class));
+                                    }
+                                    finish();
+
+                                } else {
                                     Toast.makeText(getApplicationContext(),
-                                            "Authentication Successful",
-                                            Toast.LENGTH_LONG).show();
-                                    Intent intent = new Intent(getApplicationContext(),
-                                            HomeActivity.class);
-                                    startActivity(intent);
-                                }else{
-                                    Toast.makeText(getApplicationContext(),
-                                            "Authentication failed",
+                                            "Authentication failed: " + task.getException().getMessage(),
                                             Toast.LENGTH_LONG).show();
                                 }
-
                             }
                         });
             }
         });
-    }
-
-    public void openHomeActivity(View view) {
-        startActivity(new Intent(this, HomeActivity.class));
     }
 
     public void openRegisterActivity(View view) {

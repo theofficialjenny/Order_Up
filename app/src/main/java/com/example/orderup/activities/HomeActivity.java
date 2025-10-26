@@ -31,7 +31,7 @@ import java.util.List;
 
 public class HomeActivity extends AppCompatActivity {
     private RecyclerView recyclerPopular, recyclerBestOffer;
-    private MenusRVAdapter adapterBest, adapterPopular;  // Ensure this is your adapter class
+    private MenusRVAdapter adapterBest, adapterPopular;
     private List<Menu> bestList, popularList;
     private FirebaseFirestore db;
 
