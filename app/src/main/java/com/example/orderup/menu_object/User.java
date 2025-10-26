@@ -1,46 +1,29 @@
 package com.example.orderup.menu_object;
 
 public class User {
-    private String name;
-    private Role role;
-    private int imageRefId;
+    private String userName;
+    private Role userRole;
+    private int imageResId;
 
-    public User(String name, Role role, int imageRefId) {
-        this.name = name;
-        this.role = role;
-        this.imageRefId = imageRefId;
+    public User() {}
+
+    public User(String userName, Role userRole, int imageResId) {
+        this.userName = userName;
+        this.userRole = userRole;
+        this.imageResId = imageResId;
     }
 
-    public String getName() {
-        return name;
-    }
+    public String getUserName() { return userName; }
+    public void setUserName(String userName) { this.userName = userName; }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+    public Role getUserRole() { return userRole; }
+    public void setUserRole(Role userRole) { this.userRole = userRole; }
 
-    public Role getRole() {
-        return role;
-    }
-
-    public void setRole(Role role) {
-        this.role = role;
-    }
-
-    public int getImageRefId() {
-        return imageRefId;
-    }
-
-    public void setImageRefId(int imageRefId) {
-        this.imageRefId = imageRefId;
-    }
+    public int getImageResId() { return imageResId; }
+    public void setImageResId(int imageResId) { this.imageResId = imageResId; }
 
     @Override
     public String toString() {
-        return "User{" +
-                "name='" + name + '\'' +
-                ", role=" + role +
-                ", imageRefId=" + imageRefId +
-                '}';
+        return "User{" + "userName='" + userName + '\'' + ", userRole=" + userRole + ", imageResId=" + imageResId + '}';
     }
 }
