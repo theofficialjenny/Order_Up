@@ -65,6 +65,7 @@ public class HomeActivity extends AppCompatActivity {
         menuBestOffers();
         menuPopular();
     }
+
     private void menuBestOffers() {
         db.collection("menu_best").get()
                 .addOnCompleteListener(task -> {
@@ -75,9 +76,13 @@ public class HomeActivity extends AppCompatActivity {
                             bestList.add(menu);
                         }
                         adapterBest.notifyDataSetChanged();
+                        Toast.makeText(HomeActivity.this, "Loaded " + bestList.size() + " best offers", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(HomeActivity.this, "Failed to load best offers: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 });
     }
+
     private void menuPopular() {
         db.collection("menu_popular").get()
                 .addOnCompleteListener(task -> {
@@ -88,6 +93,9 @@ public class HomeActivity extends AppCompatActivity {
                             popularList.add(menu);
                         }
                         adapterPopular.notifyDataSetChanged();
+                        Toast.makeText(HomeActivity.this, "Loaded " + popularList.size() + " popular items", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(HomeActivity.this, "Failed to load popular items: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 });
     }
@@ -96,7 +104,19 @@ public class HomeActivity extends AppCompatActivity {
         startActivity(new Intent(this, Search.class));
     }
 
+    public void openCartActivity(View view) {
+        startActivity(new Intent(this, CartActivity.class));
+    }
+
     public void openHomeActivity(View view) {
-        startActivity(new Intent(this, HomeActivity.class));
+        startActivity(new Intent(this, HomeActivity.class));  // Starts HomeActivity again (stays on homepage)
+    }
+
+    public void openDineInActivity(View view) {
+        startActivity(new Intent(this, DineIn.class));  // Navigate to reservations
+    }
+
+    public void openUserBookings(View view) {
+        startActivity(new Intent(this, DineIn.class));  // Navigate to bookings (assuming same as reservations for now)
     }
 }

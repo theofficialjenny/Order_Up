@@ -24,5 +24,12 @@ public class Search extends AppCompatActivity {
         });
     }
 
+    public void openHomeActivity(View view) {
+        startActivity(new Intent(this, HomeActivity.class));
+    }
+
+    public void openCartActivity(View view) {
+        startActivity(new Intent(this, CartActivity.class));
+    }
 
 }

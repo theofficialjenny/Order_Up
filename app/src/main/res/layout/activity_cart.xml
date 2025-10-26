@@ -6,63 +6,54 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".HomeActivity"
-    android:background="@color/white">
-
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp">
-
-        <EditText
-            android:id="@+id/search_bar_home"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:hint="Search for Food "
-            android:inputType="text"
-            android:background="@drawable/search_bar"
-            android:layout_marginTop="16dp"/>
-
-        <ImageView
-            android:layout_width="24dp"
-            android:layout_height="30dp"
-            android:layout_alignEnd="@+id/search_bar_home"
-            android:layout_marginEnd="57dp"
-            android:layout_marginTop="25dp"
-            android:src="@drawable/search_icon" />
-    </RelativeLayout>
+    android:background="@color/white"
+    tools:context=".CartActivity">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
         android:textStyle="bold"
-        android:textSize="20dp"
-        android:text="Best Offers"/>
-
+        android:textSize="24sp"
+        android:text="Your Cart" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerItem"
+        android:id="@+id/recyclerCart"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
+        android:layout_marginTop="16dp"
         android:paddingStart="8dp"
         android:paddingEnd="8dp"
         android:clipToPadding="false"
-        tools:listitem="@layout/item_menu" />
+        tools:listitem="@layout/item_cart" />
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:textStyle="bold"
-        android:textSize="20dp"
-        android:text="Pizza"/>
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:gravity="center_vertical">
 
+        <TextView
+            android:id="@+id/tv_total_price"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Total: $0.00"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
+        <Button
+            android:id="@+id/btn_checkout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Checkout"
+            android:backgroundTint="@color/black"
+            android:textColor="@android:color/white" />
+
+    </LinearLayout>
 
     <!-- Navigation -->
     <LinearLayout
@@ -83,16 +74,16 @@
 
             <ImageView
                 android:layout_width="28dp"
-                android:layout_height="23dp"
+                android:layout_height="28dp"
                 android:src="@drawable/home_icon"
-                android:onClick="openHomeActivity"/>
+                android:onClick="openHomeActivity" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:text="Home"
                 android:textSize="12dp"
-                android:textColor="@color/black"/>
+                android:textColor="@color/black" />
 
         </LinearLayout>
 
@@ -106,14 +97,15 @@
             <ImageView
                 android:layout_width="28dp"
                 android:layout_height="28dp"
-                android:src="@drawable/search"/>
+                android:src="@drawable/search"
+                android:onClick="openSearchActivity" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:text="Search"
                 android:textSize="12dp"
-                android:textColor="@color/black"/>
+                android:textColor="@color/black" />
 
         </LinearLayout>
 
@@ -127,19 +119,17 @@
             <ImageView
                 android:layout_width="28dp"
                 android:layout_height="28dp"
-                android:src="@drawable/cart_icon"
-                android:onClick="openCartActivity"/>
+                android:src="@drawable/cart_icon" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:text="Cart"
                 android:textSize="12dp"
-                android:textColor="@color/black"/>
+                android:textColor="@color/black" />
 
         </LinearLayout>
 
     </LinearLayout>
-
 
 </LinearLayout>
