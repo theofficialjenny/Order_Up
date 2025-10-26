@@ -1,28 +1,29 @@
-package com.example.orderup.activities;
+package com.example.orderup.activities;  // Assuming this is your package; adjust if needed
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;  // Added
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
+import com.example.orderup.menu_object.CartItem;  // Added import for CartItem
 import com.example.orderup.R;
-import com.example.orderup.menu_object.CartItem;
-import com.example.orderup.menu_object.CartRVAdapter;
-
+import com.example.orderup.menu_object.CartRVAdapter;  // Added import for CartRVAdapter
+import com.google.gson.Gson;  // Added
+import com.google.gson.reflect.TypeToken;  // Added
 import java.util.ArrayList;
 import java.util.List;
 
 public class CartActivity extends AppCompatActivity {
-
     private RecyclerView recyclerCart;
     private TextView tvTotalPrice;
     private Button btnCheckout;
-    private CartRVAdapter cartRVAdapter;
-    private List<CartItem> cartItems; // Assume CartItem is a model class with name, price, quantity, etc.
+    private CartRVAdapter cartRVAdapter;  // Ensure this matches your adapter name
+    private List<CartItem> cartItems;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,9 +34,10 @@ public class CartActivity extends AppCompatActivity {
         tvTotalPrice = findViewById(R.id.tv_total_price);
         btnCheckout = findViewById(R.id.btn_checkout);
 
-        // Initialize cart items (replace with your data source, e.g., from a database or shared preferences)
-        cartItems = new ArrayList<>();
-        // Example: cartItems.add(new CartItem("Mo:mo", "Tasty dumplings", 5.00, 2));
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        Gson gson = new Gson();
+        String cartJson = prefs.getString("cart_items", "[]");
+        cartItems = gson.fromJson(cartJson, new TypeToken<List<CartItem>>(){}.getType());
 
         cartRVAdapter = new CartRVAdapter(cartItems, this::updateTotalPrice);
         recyclerCart.setLayoutManager(new LinearLayoutManager(this));
@@ -44,9 +46,7 @@ public class CartActivity extends AppCompatActivity {
         updateTotalPrice();
 
         btnCheckout.setOnClickListener(v -> {
-            // Placeholder: Implement checkout logic (e.g., payment integration)
-            // For now, just show a toast or navigate to a payment activity
-            // Toast.makeText(this, "Checkout initiated", Toast.LENGTH_SHORT).show();
+            // Placeholder for checkout
         });
     }
 
@@ -58,14 +58,11 @@ public class CartActivity extends AppCompatActivity {
         tvTotalPrice.setText("Total: $" + String.format("%.2f", total));
     }
 
-    // Navigation methods (add these to match your XML onClick)
     public void openHomeActivity(View view) {
-        Intent intent = new Intent(this, HomeActivity.class);
-        startActivity(intent);
+        startActivity(new Intent(this, HomeActivity.class));
     }
 
     public void openSearchActivity(View view) {
-        Intent intent = new Intent(this, Search.class); // Assume SearchActivity exists
-        startActivity(intent);
+        startActivity(new Intent(this, Search.class));
     }
 }

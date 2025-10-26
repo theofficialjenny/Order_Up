@@ -1,21 +1,22 @@
-package com.example.orderup.menu_object;
+package com.example.orderup.menu_object;  // Changed from menu_object to main package
 
 public class CartItem {
     private String name;
     private String description;
     private double price;
     private int quantity;
-    private int imageResId;
+    private String imageUrl;
 
-    public CartItem(String name, String description, double price, int quantity, int imageResId) {
+    public CartItem() {}
+
+    public CartItem(String name, String description, double price, int quantity, String imageUrl) {
         this.name = name;
         this.description = description;
         this.price = price;
         this.quantity = quantity;
-        this.imageResId = imageResId;
+        this.imageUrl = imageUrl;
     }
 
-    // Getters and setters
     public String getName() { return name; }
     public void setName(String name) { this.name = name; }
 
@@ -28,6 +29,6 @@ public class CartItem {
     public int getQuantity() { return quantity; }
     public void setQuantity(int quantity) { this.quantity = quantity; }
 
-    public int getImageResId() { return imageResId; }
-    public void setImageResId(int imageResId) { this.imageResId = imageResId; }
+    public String getImageUrl() { return imageUrl; }
+    public void setImageUrl(String imageUrl) { this.imageUrl = imageUrl; }
 }

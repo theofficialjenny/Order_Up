@@ -3,16 +3,12 @@ package com.example.orderup.menu_object;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.example.orderup.R;
-
 import java.util.List;
 
 public class UsersRVAdapter extends RecyclerView.Adapter<UsersRVHolder> {
-
     private List<User> users;
 
     public UsersRVAdapter(List<User> users) {
@@ -30,10 +26,9 @@ public class UsersRVAdapter extends RecyclerView.Adapter<UsersRVHolder> {
     @Override
     public void onBindViewHolder(@NonNull UsersRVHolder holder, int position) {
         User user = users.get(position);
-        holder.userName.setText(user.getName());
-        holder.userImage.setImageResource(user.getImageRefId()); // Use user's image
+        holder.userName.setText(user.getUserName());
+        holder.userImage.setImageResource(user.getImageResId());
     }
-
 
     @Override
     public int getItemCount() {

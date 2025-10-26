@@ -17,16 +17,15 @@
         <ImageView
             android:id="@+id/menu_image"
             android:layout_width="150dp"
-            android:layout_height="200dp"
+            android:layout_height="145dp"
             android:src="@drawable/ic_launcher_foreground"
-            android:scaleType="centerCrop"
-            />
+            android:scaleType="centerCrop" />
 
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:background="#AAAAAA"
-            android:layout_marginVertical="8dp"/>
+            android:layout_marginVertical="8dp" />
 
         <TextView
             android:id="@+id/menu_name"
@@ -71,5 +70,16 @@
             android:layout_height="wrap_content"
             android:textSize="14sp"
             android:text="Menu Count" />
+
+        <!-- Add to Cart Button -->
+        <Button
+            android:id="@+id/btn_add_to_cart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Add to Cart"
+            android:backgroundTint="@color/black"
+            android:textColor="@android:color/white" />
+
     </LinearLayout>
 </androidx.cardview.widget.CardView>

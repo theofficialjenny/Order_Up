@@ -2,30 +2,36 @@ package com.example.orderup.activities;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
-import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.orderup.R;
+import com.example.orderup.menu_object.CartItem;
 import com.example.orderup.menu_object.Menu;
 import com.example.orderup.menu_object.MenusRVAdapter;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class HomeActivity extends AppCompatActivity {
     private RecyclerView recyclerPopular, recyclerBestOffer;
-    private MenusRVAdapter adapterBest, adapterPopular;
+    private MenusRVAdapter adapterBest, adapterPopular;  // Ensure this is your adapter class
     private List<Menu> bestList, popularList;
     private FirebaseFirestore db;
 
@@ -42,14 +48,10 @@ public class HomeActivity extends AppCompatActivity {
         });
 
         recyclerPopular = findViewById(R.id.recyclerPopular);
-        LinearLayoutManager layoutManagerPopulars =
-                new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
-        recyclerPopular.setLayoutManager(layoutManagerPopulars);
+        recyclerPopular.setLayoutManager(new GridLayoutManager(this, 2));
 
         recyclerBestOffer = findViewById(R.id.recyclerBestOffer);
-        LinearLayoutManager layoutManagerBestOffers =
-                new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
-        recyclerBestOffer.setLayoutManager(layoutManagerBestOffers);
+        recyclerBestOffer.setLayoutManager(new GridLayoutManager(this, 2));
 
         bestList = new ArrayList<>();
         popularList = new ArrayList<>();
@@ -57,6 +59,9 @@ public class HomeActivity extends AppCompatActivity {
         adapterPopular = new MenusRVAdapter(popularList);
         recyclerPopular.setAdapter(adapterPopular);
         recyclerBestOffer.setAdapter(adapterBest);
+
+        adapterBest.setOnAddToCartListener(this::addToCart);
+        adapterPopular.setOnAddToCartListener(this::addToCart);
 
         db = FirebaseFirestore.getInstance();
         menuBestOffers();
@@ -97,6 +102,36 @@ public class HomeActivity extends AppCompatActivity {
                 });
     }
 
+    private void addToCart(Menu menu) {
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor editor = prefs.edit();
+        Gson gson = new Gson();
+
+        String cartJson = prefs.getString("cart_items", "[]");
+        List<CartItem> cartItems = gson.fromJson(cartJson, new TypeToken<List<CartItem>>(){}.getType());
+
+        boolean itemExists = false;
+        for (CartItem item : cartItems) {
+            if (item.getName().equals(menu.getMenuName())) {
+                item.setQuantity(item.getQuantity() + 1);
+                itemExists = true;
+                break;
+            }
+        }
+
+        if (!itemExists) {
+            double price = Double.parseDouble(menu.getMenuPrice().replace("$", ""));
+            CartItem newItem = new CartItem(menu.getMenuName(), menu.getMenuDescription(), price, 1, menu.getMenuImage());
+            cartItems.add(newItem);
+        }
+
+        String updatedCartJson = gson.toJson(cartItems);
+        editor.putString("cart_items", updatedCartJson);
+        editor.apply();
+
+        Toast.makeText(this, menu.getMenuName() + " added to cart!", Toast.LENGTH_SHORT).show();
+    }
+
     public void openSearchActivity(View view) {
         startActivity(new Intent(this, Search.class));
     }
@@ -106,14 +141,14 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     public void openHomeActivity(View view) {
-        startActivity(new Intent(this, HomeActivity.class));  // Starts HomeActivity again (stays on homepage)
+        startActivity(new Intent(this, HomeActivity.class));
     }
 
     public void openDineInActivity(View view) {
-        startActivity(new Intent(this, DineIn.class));  // Navigate to reservations
+        startActivity(new Intent(this, DineIn.class));
     }
 
     public void openUserBookings(View view) {
-        startActivity(new Intent(this, DineIn.class));  // Navigate to bookings (assuming same as reservations for now)
+        startActivity(new Intent(this, DineIn.class));
     }
 }

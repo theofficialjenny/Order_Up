@@ -11,9 +11,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.orderup.R;
 
 public class CartRVHolder extends RecyclerView.ViewHolder {
-    ImageView itemImage;
-    TextView itemName, itemDescription, itemPrice, itemQuantity, itemTotal;
-    Button btnDecrease, btnIncrease, btnRemove;
+    public ImageView itemImage;  // Made public
+    public TextView itemName, itemDescription, itemPrice, itemQuantity, itemTotal;  // Made public
+    public Button btnDecrease, btnIncrease, btnRemove;  // Made public
 
     public CartRVHolder(@NonNull View itemView) {
         super(itemView);

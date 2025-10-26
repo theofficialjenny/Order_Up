@@ -45,6 +45,7 @@
         <activity
             android:name=".activities.WaiterActivity"
             android:exported="false" />
+
     </application>
 
 </manifest>
