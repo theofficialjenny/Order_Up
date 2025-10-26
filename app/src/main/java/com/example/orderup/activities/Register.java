@@ -1,4 +1,4 @@
-package com.example.orderup;
+package com.example.orderup.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,6 +14,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.orderup.R;
 import com.example.orderup.menu_object.User;
 import com.example.orderup.menu_object.Role;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -74,7 +75,7 @@ public class Register extends AppCompatActivity {
                                 if(task.isSuccessful()){
                                     String userID = task.getResult().getUser().getUid();
 
-                                    User user = new User(name, Role.customer);
+                                    User user = new User(name, Role.customer, 0);
                                     usersRef.document(userID).set(user)
                                             .addOnSuccessListener(documentReference -> Toast.makeText(Register.this, "User added!", Toast.LENGTH_SHORT).show())
                                             .addOnFailureListener(e -> Toast.makeText(Register.this, "Error adding user", Toast.LENGTH_SHORT).show());

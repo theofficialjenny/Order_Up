@@ -1,4 +1,4 @@
-package com.example.orderup;
+package com.example.orderup.menu_object;
 
 public class CartItem {
     private String name;

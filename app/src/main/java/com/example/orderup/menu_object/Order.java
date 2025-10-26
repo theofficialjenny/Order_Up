@@ -1,15 +1,13 @@
-package com.example.orderup;
+package com.example.orderup.menu_object;
 
 public class Order {
-    private String id;
     private String customerName;
     private String items;
     private String status;
     private String timestamp;
     private int tableNumber;
 
-    public Order(String id, int tableNumber, String customerName, String items, String status, String timestamp) {
-        this.id = id;
+    public Order(int tableNumber, String customerName, String items, String status, String timestamp) {
         this.tableNumber = tableNumber;
         this.customerName = customerName;
         this.items = items;
@@ -18,8 +16,6 @@ public class Order {
     }
 
     // Getters and setters
-    public String getId() { return id; }
-    public void setId(String id) { this.id = id; }
 
     public int getTableNumber() { return tableNumber; }
     public void setTableNumber(int tableNumber) { this.tableNumber = tableNumber; }
@@ -35,4 +31,15 @@ public class Order {
 
     public String getTimestamp() { return timestamp; }
     public void setTimestamp(String timestamp) { this.timestamp = timestamp; }
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "customerName='" + customerName + '\'' +
+                ", items='" + items + '\'' +
+                ", status='" + status + '\'' +
+                ", timestamp='" + timestamp + '\'' +
+                ", tableNumber=" + tableNumber +
+                '}';
+    }
 }

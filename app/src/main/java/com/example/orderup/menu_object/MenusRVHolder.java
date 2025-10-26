@@ -9,11 +9,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.orderup.R;
 
-public class MenuRVHolder extends RecyclerView.ViewHolder {
+public class MenusRVHolder extends RecyclerView.ViewHolder {
     public ImageView menuImage;
     public TextView menuName, menuDescription, menuCategory, menuPrice, menuRating, menuOrderCount;
 
-    public MenuRVHolder(@NonNull View itemView) {
+    public MenusRVHolder(@NonNull View itemView) {
         super(itemView);
         menuName = itemView.findViewById(R.id.menu_name);
         menuDescription = itemView.findViewById(R.id.menu_description);

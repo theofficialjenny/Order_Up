@@ -1,4 +1,4 @@
-package com.example.orderup;
+package com.example.orderup.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,6 +8,11 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.orderup.R;
+import com.example.orderup.menu_object.CartItem;
+import com.example.orderup.menu_object.CartRVAdapter;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,7 +21,7 @@ public class CartActivity extends AppCompatActivity {
     private RecyclerView recyclerCart;
     private TextView tvTotalPrice;
     private Button btnCheckout;
-    private CartAdapter cartAdapter;
+    private CartRVAdapter cartRVAdapter;
     private List<CartItem> cartItems; // Assume CartItem is a model class with name, price, quantity, etc.
 
     @Override
@@ -32,9 +37,9 @@ public class CartActivity extends AppCompatActivity {
         cartItems = new ArrayList<>();
         // Example: cartItems.add(new CartItem("Mo:mo", "Tasty dumplings", 5.00, 2));
 
-        cartAdapter = new CartAdapter(cartItems, this::updateTotalPrice);
+        cartRVAdapter = new CartRVAdapter(cartItems, this::updateTotalPrice);
         recyclerCart.setLayoutManager(new LinearLayoutManager(this));
-        recyclerCart.setAdapter(cartAdapter);
+        recyclerCart.setAdapter(cartRVAdapter);
 
         updateTotalPrice();
 

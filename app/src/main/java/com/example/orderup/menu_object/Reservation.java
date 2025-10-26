@@ -3,78 +3,44 @@ package com.example.orderup.menu_object;
 import java.util.Date;
 
 public class Reservation {
-    private String reservationID;
-    private String reservationUser;
-    private String reservationTableNumber;
-    private Date reservationDate;
-    private Type reservationType;
-    private Status reservationStatus;
+    private String user;
+    private int tableNumber;
+    private String date;
+    private String type;
+    private String status;
 
-    public Reservation(String reservationUser, String reservationTableNumber, Date reservationDate, Type reservationType, Status reservationStatus) {
-        this.reservationUser = reservationUser;
-        this.reservationTableNumber = reservationTableNumber;
-        this.reservationDate = reservationDate;
-        this.reservationType = reservationType;
-        this.reservationStatus = reservationStatus;
+    public Reservation(String user, int tableNumber, String date, String type, String status) {
+        this.user = user;
+        this.tableNumber = tableNumber;
+        this.date = date;
+        this.type = type;
+        this.status = status;
     }
 
-    public String getReservationID() {
-        return reservationID;
-    }
+    // Getters and setters
+    public String getUser() { return user; }
+    public void setUser(String user) { this.user = user; }
 
-    public void setReservationID(String reservationID) {
-        this.reservationID = reservationID;
-    }
+    public int getTableNumber() { return tableNumber; }
+    public void setTableNumber(int tableNumber) { this.tableNumber = tableNumber; }
 
-    public String getReservationUser() {
-        return reservationUser;
-    }
+    public String getDate() { return date; }
+    public void setDate(String date) { this.date = date; }
 
-    public void setReservationUser(String reservationUser) {
-        this.reservationUser = reservationUser;
-    }
+    public String getType() { return type; }
+    public void setType(String type) { this.type = type; }
 
-    public String getReservationTableNumber() {
-        return reservationTableNumber;
-    }
-
-    public void setReservationTableNumber(String reservationTableNumber) {
-        this.reservationTableNumber = reservationTableNumber;
-    }
-
-    public Date getReservationDate() {
-        return reservationDate;
-    }
-
-    public void setReservationDate(Date reservationDate) {
-        this.reservationDate = reservationDate;
-    }
-
-    public Type getReservationType() {
-        return reservationType;
-    }
-
-    public void setReservationType(Type reservationType) {
-        this.reservationType = reservationType;
-    }
-
-    public Status getReservationStatus() {
-        return reservationStatus;
-    }
-
-    public void setReservationStatus(Status reservationStatus) {
-        this.reservationStatus = reservationStatus;
-    }
+    public String getStatus() { return status; }
+    public void setStatus(String status) { this.status = status; }
 
     @Override
     public String toString() {
         return "Reservation{" +
-                "reservationID='" + reservationID + '\'' +
-                ", reservationUser='" + reservationUser + '\'' +
-                ", reservationTableNumber='" + reservationTableNumber + '\'' +
-                ", reservationDate=" + reservationDate +
-                ", reservationType=" + reservationType +
-                ", reservationStatus=" + reservationStatus +
+                "reservationUser='" + user + '\'' +
+                ", reservationTableNumber='" + tableNumber + '\'' +
+                ", reservationDate=" + date +
+                ", reservationType=" + type +
+                ", reservationStatus=" + status +
                 '}';
     }
 }

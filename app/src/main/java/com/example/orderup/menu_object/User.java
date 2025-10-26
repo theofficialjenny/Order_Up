@@ -1,35 +1,46 @@
 package com.example.orderup.menu_object;
 
 public class User {
-    private String userName;
-    private Role userRole;
+    private String name;
+    private Role role;
+    private int imageRefId;
 
-    public User(String userName, Role userRole) {
-        this.userName = userName;
-        this.userRole = userRole;
+    public User(String name, Role role, int imageRefId) {
+        this.name = name;
+        this.role = role;
+        this.imageRefId = imageRefId;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getName() {
+        return name;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public Role getUserRole() {
-        return userRole;
+    public Role getRole() {
+        return role;
     }
 
-    public void setUserRole(Role userRole) {
-        this.userRole = userRole;
+    public void setRole(Role role) {
+        this.role = role;
+    }
+
+    public int getImageRefId() {
+        return imageRefId;
+    }
+
+    public void setImageRefId(int imageRefId) {
+        this.imageRefId = imageRefId;
     }
 
     @Override
     public String toString() {
         return "User{" +
-                "userName='" + userName + '\'' +
-                ", userRole='" + userRole + '\'' +
+                "name='" + name + '\'' +
+                ", role=" + role +
+                ", imageRefId=" + imageRefId +
                 '}';
     }
 }

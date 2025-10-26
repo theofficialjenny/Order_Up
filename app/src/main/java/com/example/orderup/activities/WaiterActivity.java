@@ -1,11 +1,15 @@
-package com.example.orderup;
+package com.example.orderup.activities;
 
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.orderup.R;
+import com.example.orderup.menu_object.Order;
+import com.example.orderup.menu_object.OrdersRVAdapter;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,7 +17,7 @@ public class WaiterActivity extends AppCompatActivity {
 
     private RecyclerView recyclerOrders;
     private Button btnMarkReady, btnMarkServed;
-    private OrderAdapter orderAdapter;
+    private OrdersRVAdapter ordersRVAdapter;
     private List<Order> orders; // Assume Order is a model class with ID, table, customer, items, status, etc.
 
     @Override
@@ -29,9 +33,9 @@ public class WaiterActivity extends AppCompatActivity {
         orders = new ArrayList<>();
         // Example: orders.add(new Order("#12345", 5, "John Doe", "Mo:mo x2", "Pending", "2023-10-01 14:30"));
 
-        orderAdapter = new OrderAdapter(orders);
+        ordersRVAdapter = new OrdersRVAdapter(orders);
         recyclerOrders.setLayoutManager(new LinearLayoutManager(this));
-        recyclerOrders.setAdapter(orderAdapter);
+        recyclerOrders.setAdapter(ordersRVAdapter);
 
         btnMarkReady.setOnClickListener(v -> {
             // Placeholder: Update selected order status to "Ready"

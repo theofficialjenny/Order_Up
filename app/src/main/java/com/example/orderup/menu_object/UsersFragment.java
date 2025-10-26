@@ -1,4 +1,4 @@
-package com.example.orderup;
+package com.example.orderup.menu_object;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,13 +9,16 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.orderup.R;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class UsersFragment extends Fragment {
 
     private RecyclerView recyclerUsers;
-    private UserAdapter userAdapter; // Assume you have this adapter; similar to CartAdapter
+    private UsersRVAdapter userAdapter; // Assume you have this adapter; similar to CartRVAdapter
     private List<User> users; // Assume User model class
 
     @Nullable
@@ -27,7 +30,7 @@ public class UsersFragment extends Fragment {
 
         users = new ArrayList<>();
         // Load users from Firebase or database, e.g., users.add(new User("John Doe"));
-        userAdapter = new UserAdapter(users);
+        userAdapter = new UsersRVAdapter(users);
         recyclerUsers.setAdapter(userAdapter);
 
         return view;

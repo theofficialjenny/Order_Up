@@ -1,35 +1,37 @@
-package com.example.orderup;
+package com.example.orderup.menu_object;
 
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.orderup.R;
+
 import java.util.List;
 
-public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder> {
+public class CartRVAdapter extends RecyclerView.Adapter<CartRVHolder> {
 
     private List<CartItem> cartItems;
     private Runnable updateTotalCallback; // Callback to update total price in activity
 
-    public CartAdapter(List<CartItem> cartItems, Runnable updateTotalCallback) {
+    public CartRVAdapter(List<CartItem> cartItems, Runnable updateTotalCallback) {
         this.cartItems = cartItems;
         this.updateTotalCallback = updateTotalCallback;
     }
 
     @NonNull
     @Override
-    public CartViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_cart, parent, false);
-        return new CartViewHolder(view);
+    public CartRVHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.item_cart, parent, false);
+        return new CartRVHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull CartViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull CartRVHolder holder, int position) {
         CartItem item = cartItems.get(position);
 
         holder.itemName.setText(item.getName());
@@ -64,24 +66,5 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
     @Override
     public int getItemCount() {
         return cartItems.size();
-    }
-
-    static class CartViewHolder extends RecyclerView.ViewHolder {
-        ImageView itemImage;
-        TextView itemName, itemDescription, itemPrice, itemQuantity, itemTotal;
-        Button btnDecrease, btnIncrease, btnRemove;
-
-        public CartViewHolder(@NonNull View itemView) {
-            super(itemView);
-            itemImage = itemView.findViewById(R.id.cart_item_image);
-            itemName = itemView.findViewById(R.id.cart_item_name);
-            itemDescription = itemView.findViewById(R.id.cart_item_description);
-            itemPrice = itemView.findViewById(R.id.cart_item_price);
-            itemQuantity = itemView.findViewById(R.id.cart_item_quantity);
-            itemTotal = itemView.findViewById(R.id.cart_item_total);
-            btnDecrease = itemView.findViewById(R.id.btn_decrease_quantity);
-            btnIncrease = itemView.findViewById(R.id.btn_increase_quantity);
-            btnRemove = itemView.findViewById(R.id.btn_remove_item);
-        }
     }
 }

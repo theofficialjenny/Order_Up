@@ -1,7 +1,6 @@
 package com.example.orderup.menu_object;
 
 public class Menu {
-    private String menuID;
     private String menuName;
     private String menuDescription;
     private String menuCategory;
@@ -22,14 +21,6 @@ public class Menu {
 
     public Menu(){
 
-    }
-
-    public String getMenuID() {
-        return menuID;
-    }
-
-    public void setMenuID(String menuID) {
-        this.menuID = menuID;
     }
 
     public String getMenuName() {
@@ -91,7 +82,6 @@ public class Menu {
     @Override
     public String toString() {
         return "Menu{" +
-                "menuID='" + menuID + '\'' +
                 ", menuName='" + menuName + '\'' +
                 ", menuDescription='" + menuDescription + '\'' +
                 ", menuCategory='" + menuCategory + '\'' +

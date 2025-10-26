@@ -1,4 +1,4 @@
-package com.example.orderup;
+package com.example.orderup.activities;
 
 import android.os.Bundle;
 import androidx.activity.EdgeToEdge;
@@ -9,6 +9,11 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
+
+import com.example.orderup.R;
+import com.example.orderup.menu_object.MenusFragment;
+import com.example.orderup.menu_object.ReservationsFragment;
+import com.example.orderup.menu_object.UsersFragment;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 

@@ -11,30 +11,30 @@ import com.example.orderup.R;
 
 import java.util.List;
 
-public class ReservationRVAdapter extends RecyclerView.Adapter<ReservationRVHolder> {
+public class ReservationsRVAdapter extends RecyclerView.Adapter<ReservationsRVHolder> {
     private List<Reservation> reservationList;
 
-    public ReservationRVAdapter(List<Reservation> reservationList) {
+    public ReservationsRVAdapter(List<Reservation> reservationList) {
         this.reservationList = reservationList;
     }
 
     @NonNull
     @Override
-    public ReservationRVHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ReservationsRVHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.item_reservation, parent, false);
-        return new ReservationRVHolder(view);
+        return new ReservationsRVHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ReservationRVHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ReservationsRVHolder holder, int position) {
         Reservation reservation = reservationList.get(position);
 
-        holder.reservationUser.setText(reservation.getReservationUser());
-        holder.reservationTableNumber.setText(reservation.getReservationTableNumber());
-        holder.reservationDate.setText(reservation.getReservationDate().toString());
-        holder.reservationType.setText(reservation.getReservationType().toString());
-        holder.reservationStatus.setText(reservation.getReservationStatus().toString());
+        holder.reservationUser.setText(reservation.getUser());
+        holder.reservationTableNumber.setText(reservation.getTableNumber());
+        holder.reservationDate.setText(reservation.getDate().toString());
+        holder.reservationType.setText(reservation.getType().toString());
+        holder.reservationStatus.setText(reservation.getStatus().toString());
     }
 
     @Override

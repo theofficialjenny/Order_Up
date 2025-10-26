@@ -7,33 +7,35 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bumptech.glide.Glide;
+//import com.bumptech.glide.Glide;
 import com.example.orderup.R;
 
 import java.util.List;
 
-public class MenuRVAdapter extends RecyclerView.Adapter<MenuRVHolder> {
+public class MenusRVAdapter extends RecyclerView.Adapter<MenusRVHolder> {
     private List<Menu> menuList;
 
-    public MenuRVAdapter(List<Menu> menuList) {
+    public MenusRVAdapter(List<Menu> menuList) {
         this.menuList = menuList;
     }
 
     @NonNull
     @Override
-    public MenuRVHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public MenusRVHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.item_menu, parent, false);
-        return new MenuRVHolder(view);
+        return new MenusRVHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MenuRVHolder holder, int position) {
+    public void onBindViewHolder(@NonNull MenusRVHolder holder, int position) {
         Menu menu = menuList.get(position);
 
-        Glide.with(holder.itemView.getContext())
-                .load(menu.getMenuImage())
-                .into(holder.menuImage);
+        // Error Occuring with Glide, Commented for now.
+
+        //Glide.with(holder.itemView.getContext())
+        //        .load(menu.getMenuImage())
+        //        .into(holder.menuImage);
 
         holder.menuName.setText(menu.getMenuName());
         holder.menuDescription.setText(menu.getMenuDescription());

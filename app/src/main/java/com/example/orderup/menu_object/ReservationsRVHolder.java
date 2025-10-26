@@ -8,9 +8,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.orderup.R;
 
-public class ReservationRVHolder extends RecyclerView.ViewHolder {
+public class ReservationsRVHolder extends RecyclerView.ViewHolder {
     public TextView reservationUser, reservationTableNumber, reservationDate, reservationType, reservationStatus;
-    public ReservationRVHolder(@NonNull View itemView) {
+    public ReservationsRVHolder(@NonNull View itemView) {
         super(itemView);
         reservationUser = itemView.findViewById(R.id.reservation_user);
         reservationTableNumber = itemView.findViewById(R.id.reservation_table_number);

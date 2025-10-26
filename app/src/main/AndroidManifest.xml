@@ -13,13 +13,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.OrderUp">
         <activity
-            android:name=".Admin"
+            android:name=".activities.Admin"
             android:exported="false" />
         <activity
-            android:name=".Register"
+            android:name=".activities.Register"
             android:exported="false" />
         <activity
-            android:name=".Login"
+            android:name=".activities.Login"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,23 +27,23 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".DineIn"
+            android:name=".activities.DineIn"
             android:exported="false" />
         <activity
-            android:name=".Search"
+            android:name=".activities.Search"
             android:exported="false" />
         <activity
-            android:name=".HomeActivity"
+            android:name=".activities.HomeActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".activities.MainActivity"
             android:exported="false" />
         <!-- Added missing activities -->
         <activity
-            android:name=".CartActivity"
+            android:name=".activities.CartActivity"
             android:exported="false" />
         <activity
-            android:name=".WaiterActivity"
+            android:name=".activities.WaiterActivity"
             android:exported="false" />
     </application>
 

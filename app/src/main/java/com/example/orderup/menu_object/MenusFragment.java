@@ -1,4 +1,4 @@
-package com.example.orderup;
+package com.example.orderup.menu_object;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,8 +9,8 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import com.example.orderup.menu_object.Menu;
-import com.example.orderup.menu_object.MenuRVAdapter;
+
+import com.example.orderup.R;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import java.util.ArrayList;
@@ -19,7 +19,7 @@ import java.util.List;
 public class MenusFragment extends Fragment {
 
     private RecyclerView recyclerMenus;
-    private MenuRVAdapter menuAdapter;
+    private MenusRVAdapter menuAdapter;
     private List<Menu> menus;
     private FirebaseFirestore db;
 
@@ -31,7 +31,7 @@ public class MenusFragment extends Fragment {
         recyclerMenus.setLayoutManager(new LinearLayoutManager(getContext()));
 
         menus = new ArrayList<>();
-        menuAdapter = new MenuRVAdapter(menus);
+        menuAdapter = new MenusRVAdapter(menus);
         recyclerMenus.setAdapter(menuAdapter);
 
         db = FirebaseFirestore.getInstance();
