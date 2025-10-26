@@ -41,7 +41,7 @@ public class MenusFragment extends Fragment {
     }
 
     private void loadMenus() {
-        db.collection("menu").get().addOnCompleteListener(task -> {
+        db.collection("menu_best").get().addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
                 menus.clear();
                 for (QueryDocumentSnapshot doc : task.getResult()) {

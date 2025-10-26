@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".HomeActivity"
+    tools:context=".activities.HomeActivity"
     android:background="@color/white">
 
 
@@ -35,15 +35,6 @@
             android:src="@drawable/search_icon" />
     </RelativeLayout>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:textStyle="bold"
-        android:textSize="20dp"
-        android:text="Best Offers"/>
-
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerItem"
         android:layout_width="match_parent"
@@ -53,16 +44,6 @@
         android:paddingEnd="8dp"
         android:clipToPadding="false"
         tools:listitem="@layout/item_menu" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:textStyle="bold"
-        android:textSize="20dp"
-        android:text="Pizza"/>
-
-
 
     <!-- Navigation -->
     <LinearLayout

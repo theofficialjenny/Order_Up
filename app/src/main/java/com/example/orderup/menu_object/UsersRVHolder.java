@@ -3,10 +3,8 @@ package com.example.orderup.menu_object;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.example.orderup.R;
 
 public class UsersRVHolder extends RecyclerView.ViewHolder {
@@ -15,7 +13,7 @@ public class UsersRVHolder extends RecyclerView.ViewHolder {
 
     public UsersRVHolder(@NonNull View itemView) {
         super(itemView);
-        userImage = itemView.findViewById(R.id.menu_image); // Note: item_user.xml uses menu_image ID
+        userImage = itemView.findViewById(R.id.user_image);
         userName = itemView.findViewById(R.id.user_name);
     }
 }

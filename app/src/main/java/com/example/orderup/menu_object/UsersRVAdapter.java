@@ -9,6 +9,7 @@ import com.example.orderup.R;
 import java.util.List;
 
 public class UsersRVAdapter extends RecyclerView.Adapter<UsersRVHolder> {
+
     private List<User> users;
 
     public UsersRVAdapter(List<User> users) {
@@ -27,7 +28,7 @@ public class UsersRVAdapter extends RecyclerView.Adapter<UsersRVHolder> {
     public void onBindViewHolder(@NonNull UsersRVHolder holder, int position) {
         User user = users.get(position);
         holder.userName.setText(user.getUserName());
-        holder.userImage.setImageResource(user.getImageResId());
+        holder.userImage.setImageResource(user.getImageResId() != 0 ? user.getImageResId() : R.drawable.ic_launcher_foreground);
     }
 
     @Override
