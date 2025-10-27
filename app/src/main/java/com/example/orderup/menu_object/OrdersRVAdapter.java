@@ -38,7 +38,7 @@ public class OrdersRVAdapter extends RecyclerView.Adapter<OrdersRVHolder> {
         holder.timestamp.setText("Timestamp: " + order.getTimestamp());
 
         // Color-code status
-        switch (order.getStatus()) {
+        switch (order.getStatus().toString()) {
             case "Pending":
                 holder.status.setTextColor(Color.parseColor("#FF9800")); // Orange
                 break;
@@ -63,7 +63,7 @@ public class OrdersRVAdapter extends RecyclerView.Adapter<OrdersRVHolder> {
     }
 
     // Method to update status (call from WaiterActivity)
-    public void updateStatus(int position, String newStatus) {
+    public void updateStatus(int position, Status newStatus) {
         if (position >= 0 && position < orders.size()) {
             orders.get(position).setStatus(newStatus);
             notifyItemChanged(position);

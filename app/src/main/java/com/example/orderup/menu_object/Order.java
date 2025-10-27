@@ -3,11 +3,11 @@ package com.example.orderup.menu_object;
 public class Order {
     private String customerName;
     private String items;
-    private String status;
+    private Status status;
     private String timestamp;
     private int tableNumber;
 
-    public Order(int tableNumber, String customerName, String items, String status, String timestamp) {
+    public Order(int tableNumber, String customerName, String items, Status status, String timestamp) {
         this.tableNumber = tableNumber;
         this.customerName = customerName;
         this.items = items;
@@ -26,8 +26,8 @@ public class Order {
     public String getItems() { return items; }
     public void setItems(String items) { this.items = items; }
 
-    public String getStatus() { return status; }
-    public void setStatus(String status) { this.status = status; }
+    public Status getStatus() { return status; }
+    public void setStatus(Status status) { this.status = status; }
 
     public String getTimestamp() { return timestamp; }
     public void setTimestamp(String timestamp) { this.timestamp = timestamp; }

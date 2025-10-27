@@ -12,7 +12,6 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import com.example.orderup.R;
 import com.example.orderup.menu_object.MenusFragment;
-import com.example.orderup.menu_object.ReservationsFragment;
 import com.example.orderup.menu_object.UsersFragment;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
@@ -67,8 +66,6 @@ public class Admin extends AppCompatActivity {
                     return new UsersFragment();
                 case 1:
                     return new MenusFragment();
-                case 2:
-                    return new ReservationsFragment();
                 default:
                     return new UsersFragment();
             }
