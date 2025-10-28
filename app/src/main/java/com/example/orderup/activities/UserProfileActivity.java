@@ -77,10 +77,12 @@ public class UserProfileActivity extends AppCompatActivity {
             if (task.isSuccessful()) {
                 List<String> bookings = new ArrayList<>();
                 for (QueryDocumentSnapshot doc : task.getResult()) {
-                    String bookingInfo = "Table: " + doc.getString("tableNumber")
+                    Long tableNumberNum = doc.getLong("tableNumber");;
+                    Long peopleNum = doc.getLong("people");
+                    String bookingInfo = "Table: " + (tableNumberNum != null ? tableNumberNum.toString() : null)
                             + "\nDate: " + doc.getString("date")
                             + "\nTime: " + doc.getString("time")
-                            + "\nPeople: " + doc.getString("people");
+                            + "\nPeople: " + (peopleNum != null ? peopleNum.toString() : null);
                     bookings.add(bookingInfo);
                 }
                 recyclerBookings.setAdapter(new SimpleTextAdapter(bookings));
