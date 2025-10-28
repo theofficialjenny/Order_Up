@@ -27,9 +27,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activities.DineIn"
-            android:exported="false" />
-        <activity
             android:name=".activities.Search"
             android:exported="false" />
         <activity

@@ -5,21 +5,17 @@ public class Order {
     private String items;
     private Status status;
     private String timestamp;
-    private int tableNumber;
+    private double totalPrice;
 
-    public Order(int tableNumber, String customerName, String items, Status status, String timestamp) {
-        this.tableNumber = tableNumber;
+    public Order(String customerName, String items, Status status, double totalPrice, String timestamp) {
         this.customerName = customerName;
         this.items = items;
         this.status = status;
+        this.totalPrice = totalPrice;
         this.timestamp = timestamp;
     }
 
     // Getters and setters
-
-    public int getTableNumber() { return tableNumber; }
-    public void setTableNumber(int tableNumber) { this.tableNumber = tableNumber; }
-
     public String getCustomerName() { return customerName; }
     public void setCustomerName(String customerName) { this.customerName = customerName; }
 
@@ -32,14 +28,18 @@ public class Order {
     public String getTimestamp() { return timestamp; }
     public void setTimestamp(String timestamp) { this.timestamp = timestamp; }
 
+    public double getTotalPrice() { return totalPrice; }
+
+    public void setTotalPrice(double totalPrice) { this.totalPrice = totalPrice; }
+
     @Override
     public String toString() {
         return "Order{" +
                 "customerName='" + customerName + '\'' +
                 ", items='" + items + '\'' +
-                ", status='" + status + '\'' +
+                ", status=" + status +
                 ", timestamp='" + timestamp + '\'' +
-                ", tableNumber=" + tableNumber +
+                ", totalPrice=" + totalPrice +
                 '}';
     }
 }

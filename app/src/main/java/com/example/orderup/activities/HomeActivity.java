@@ -143,12 +143,4 @@ public class HomeActivity extends AppCompatActivity {
     public void openHomeActivity(View view) {
         startActivity(new Intent(this, HomeActivity.class));
     }
-
-    public void openDineInActivity(View view) {
-        startActivity(new Intent(this, DineIn.class));
-    }
-
-    public void openUserBookings(View view) {
-        startActivity(new Intent(this, DineIn.class));
-    }
 }
