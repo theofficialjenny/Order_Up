@@ -39,6 +39,4 @@
         android:onClick="openHomeActivity"
         android:backgroundTint="@color/black"/>
 
-
-
 </LinearLayout>
