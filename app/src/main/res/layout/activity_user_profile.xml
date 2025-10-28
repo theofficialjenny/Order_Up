@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@color/white">
+
+    <!-- User Email -->
+    <TextView
+        android:id="@+id/tv_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Email: "
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <!-- Encrypted Password Placeholder -->
+    <TextView
+        android:id="@+id/tv_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Password: Encrypted (not shown for security)"
+        android:textSize="18sp"
+        android:layout_marginTop="8dp" />
+
+    <!-- Orders Section -->
+    <TextView
+        android:id="@+id/tv_orders_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Your Orders:"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginTop="16dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_orders"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:clipToPadding="false" />
+
+    <!-- Bookings Section -->
+    <TextView
+        android:id="@+id/tv_bookings_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Your Bookings:"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginTop="16dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_bookings"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:clipToPadding="false" />
+
+</LinearLayout>
+

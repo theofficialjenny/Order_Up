@@ -147,7 +147,9 @@ public class HomeActivity extends AppCompatActivity {
         startActivity(new Intent(this, ReservationActivity.class));
     }
 
-    public void openUserBookings(View view) {
-        startActivity(new Intent(this, ReservationActivity.class));
+    public void openUserProfile(View view) {
+        Intent intent = new Intent(this, UserProfileActivity.class);
+        startActivity(intent);
+        overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
     }
 }

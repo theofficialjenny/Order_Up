@@ -26,131 +26,131 @@
             android:layout_alignParentEnd="true"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="8dp"
-            android:onClick="openUserBookings"
+            android:onClick="openUserProfile"
             android:src="@drawable/final_user_icon" />
 
         <ImageView
             android:layout_width="100dp"
             android:layout_height="40dp"
             android:layout_marginTop="16dp"
-
             android:layout_toStartOf="@+id/imageView"
             android:onClick="openDineInActivity"
             android:src="@drawable/final_reserve_icon" />
     </RelativeLayout>
-        <!-- Best Offers -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginStart="16dp"
-            android:textStyle="bold"
-            android:textSize="20dp"
-            android:text="Best Offers" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerBestOffer"
-            android:layout_width="match_parent"
-            android:layout_marginTop="16dp"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:paddingStart="8dp"
-            android:paddingEnd="8dp"
-            android:clipToPadding="false"
-            tools:listitem="@layout/item_menu" />
+    <!-- Best Offers -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:text="Best Offers" />
 
-        <!-- Our Populars -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginStart="16dp"
-            android:textStyle="bold"
-            android:textSize="20dp"
-            android:text="Our Populars" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerBestOffer"
+        android:layout_width="match_parent"
+        android:layout_marginTop="16dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:clipToPadding="false"
+        tools:listitem="@layout/item_menu" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerPopular"
-            android:layout_width="match_parent"
-            android:layout_marginTop="16dp"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:paddingStart="8dp"
-            android:paddingEnd="8dp"
-            android:clipToPadding="false"
-            tools:listitem="@layout/item_menu" />
+    <!-- Our Populars -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:text="Our Populars" />
 
-        <!-- Navigation -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerPopular"
+        android:layout_width="match_parent"
+        android:layout_marginTop="16dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:clipToPadding="false"
+        tools:listitem="@layout/item_menu" />
+
+    <!-- Navigation -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="@color/white"
+        android:elevation="8dp"
+        android:padding="8dp">
+
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:orientation="horizontal"
-            android:gravity="center"
-            android:background="@color/white"
-            android:elevation="8dp"
-            android:padding="8dp">
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
 
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:gravity="center">
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/home_icon"
+                android:onClick="openHomeActivity" />
 
-                <ImageView
-                    android:layout_width="28dp"
-                    android:layout_height="28dp"
-                    android:src="@drawable/home_icon"
-                    android:onClick="openHomeActivity" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Home"
+                android:textSize="12dp"
+                android:textColor="@color/black" />
+        </LinearLayout>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Home"
-                    android:textSize="12dp"
-                    android:textColor="@color/black" />
-            </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
 
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:gravity="center">
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/search"
+                android:onClick="openSearchActivity" />
 
-                <ImageView
-                    android:layout_width="28dp"
-                    android:layout_height="28dp"
-                    android:src="@drawable/search"
-                    android:onClick="openSearchActivity" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Search"
+                android:textSize="12dp"
+                android:textColor="@color/black" />
+        </LinearLayout>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Search"
-                    android:textSize="12dp"
-                    android:textColor="@color/black" />
-            </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
 
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:gravity="center">
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/cart_icon"
+                android:onClick="openCartActivity" />
 
-                <ImageView
-                    android:layout_width="28dp"
-                    android:layout_height="28dp"
-                    android:src="@drawable/cart_icon"
-                    android:onClick="openCartActivity" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Cart"
-                    android:textSize="12dp"
-                    android:textColor="@color/black" />
-            </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cart"
+                android:textSize="12dp"
+                android:textColor="@color/black" />
         </LinearLayout>
     </LinearLayout>
+</LinearLayout>

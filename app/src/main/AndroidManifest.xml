@@ -45,6 +45,9 @@
         <activity
             android:name=".activities.WaiterActivity"
             android:exported="false" />
+        <activity
+            android:name=".activities.UserProfileActivity"
+            android:exported="false" />
 
     </application>
 
