@@ -17,25 +17,26 @@
         <ImageView
             android:layout_width="160dp"
             android:layout_height="80dp"
-            android:src="@drawable/logo" />
+            android:src="@drawable/final_logo_icon" />
 
         <ImageView
+            android:id="@+id/imageView"
             android:layout_width="60dp"
             android:layout_height="40dp"
             android:layout_alignParentEnd="true"
-            android:layout_marginEnd="8dp"
             android:layout_marginTop="16dp"
-            android:src="@drawable/user"
-            android:onClick="openUserBookings"/>
+            android:layout_marginEnd="8dp"
+            android:onClick="openUserBookings"
+            android:src="@drawable/final_user_icon" />
 
         <ImageView
-            android:layout_width="200dp"
+            android:layout_width="100dp"
             android:layout_height="40dp"
-            android:layout_alignParentEnd="true"
-            android:layout_marginEnd="8dp"
             android:layout_marginTop="16dp"
-            android:src="@drawable/dine_in"
-            android:onClick="openDineInActivity" />
+
+            android:layout_toStartOf="@+id/imageView"
+            android:onClick="openDineInActivity"
+            android:src="@drawable/final_reserve_icon" />
     </RelativeLayout>
         <!-- Best Offers -->
         <TextView

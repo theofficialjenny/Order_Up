@@ -27,7 +27,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activities.DineIn"
+            android:name=".activities.ReservationActivity"
             android:exported="false" />
         <activity
             android:name=".activities.Search"

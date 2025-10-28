@@ -9,7 +9,6 @@ import android.view.View;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -145,10 +144,10 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     public void openDineInActivity(View view) {
-        startActivity(new Intent(this, DineIn.class));
+        startActivity(new Intent(this, ReservationActivity.class));
     }
 
     public void openUserBookings(View view) {
-        startActivity(new Intent(this, DineIn.class));
+        startActivity(new Intent(this, ReservationActivity.class));
     }
 }

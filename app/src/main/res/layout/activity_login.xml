@@ -10,14 +10,11 @@
     tools:context=".activities.Login"
     android:background="@color/white">
 
-
-
     <ImageView
         android:id="@+id/login_logo"
         android:layout_width="match_parent"
         android:layout_height="300dp"
-        android:src="@drawable/logo" />
-
+        android:src="@drawable/final_logo_icon" />
 
     <EditText
         android:id="@+id/txt_email"
@@ -25,7 +22,6 @@
         android:layout_height="wrap_content"
         android:hint="User email"
         android:inputType="textEmailAddress"
-
         />
     <EditText
         android:id="@+id/txt_pass"
@@ -33,20 +29,21 @@
         android:layout_height="wrap_content"
         android:hint="Password"
         android:inputType="textPassword"
-
         />
     <Button
         android:id="@+id/btn_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Login"
-        android:backgroundTint="@color/black"
+        android:backgroundTint="@color/orange"
         android:onClick="openHomeActivity"/>
     <TextView
         android:id="@+id/tv_reg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:paddingTop="10dp"
         android:text="Register"
+        android:textColor="@color/red"
         android:onClick="openRegisterActivity"/>
 
 </LinearLayout>

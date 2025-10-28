@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="wrap_content"
-    android:layout_height="370dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:layout_margin="8dp"
     app:cardElevation="6dp"
     app:cardBackgroundColor="@color/white"
@@ -14,72 +14,50 @@
         android:orientation="vertical"
         android:padding="12dp">
 
-        <ImageView
-            android:id="@+id/menu_image"
-            android:layout_width="150dp"
-            android:layout_height="145dp"
-            android:src="@drawable/ic_launcher_foreground"
-            android:scaleType="centerCrop" />
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="#AAAAAA"
-            android:layout_marginVertical="8dp" />
-
         <TextView
-            android:id="@+id/menu_name"
+            android:id="@+id/table_number"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textStyle="bold"
             android:textSize="18sp"
             android:textColor="@android:color/black"
-            android:text="Menu Item Name" />
+            android:text="Table: 1" />
 
         <TextView
-            android:id="@+id/menu_description"
+            android:id="@+id/table_status"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="14sp"
-            android:text="Menu Description" />
+            android:text="Status: Pending" />
 
         <TextView
-            android:id="@+id/menu_category"
+            android:id="@+id/table_people"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="14sp"
-            android:text="Menu Category" />
+            android:text="People: 4" />
 
         <TextView
-            android:id="@+id/menu_price"
+            android:id="@+id/table_items"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="14sp"
-            android:text="Menu Price" />
+            android:text="Items: Burger x2" />
 
         <TextView
-            android:id="@+id/menu_rating"
+            android:id="@+id/table_price"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="14sp"
-            android:text="Menu Rating" />
+            android:text="Price: $25.99" />
 
         <TextView
-            android:id="@+id/menu_count"
+            android:id="@+id/table_time"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="14sp"
-            android:text="Menu Count" />
-
-        <!-- Add to Cart Button -->
-        <Button
-            android:id="@+id/btn_add_to_cart"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="Add to Cart"
-            android:backgroundTint="@color/orange"
-            android:textColor="@android:color/white" />
+            android:text="Time: 14:30" />
 
     </LinearLayout>
+
 </androidx.cardview.widget.CardView>

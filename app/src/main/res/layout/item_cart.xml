@@ -64,7 +64,7 @@
                     android:layout_height="wrap_content"
                     android:text="-"
                     android:textSize="16sp"
-                    android:backgroundTint="@color/black"
+                    android:backgroundTint="@color/orange"
                     android:textColor="@android:color/white"
                     android:layout_marginEnd="8dp" />
 
@@ -83,7 +83,7 @@
                     android:layout_height="wrap_content"
                     android:text="+"
                     android:textSize="16sp"
-                    android:backgroundTint="@color/black"
+                    android:backgroundTint="@color/orange"
                     android:textColor="@android:color/white" />
 
             </LinearLayout>
