@@ -31,10 +31,10 @@ public class OrdersRVAdapter extends RecyclerView.Adapter<OrdersRVHolder> {
     public void onBindViewHolder(@NonNull OrdersRVHolder holder, int position) {
         Order order = orders.get(position);
 
-        holder.tableNumber.setText("Table Number: " + order.getTableNumber());
         holder.customerName.setText("Customer: " + order.getCustomerName());
         holder.items.setText("Items: " + order.getItems());
         holder.status.setText("Status: " + order.getStatus());
+        holder.totalPrice.setText("Total Price: $" + order.getTotalPrice());
         holder.timestamp.setText("Timestamp: " + order.getTimestamp());
 
         // Color-code status

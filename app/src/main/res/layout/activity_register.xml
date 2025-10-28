@@ -10,12 +10,6 @@
     tools:context=".activities.Register"
     android:background="@color/white">
 
-    <ImageView
-        android:id="@+id/login_logo"
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:src="@drawable/final_logo_icon" />
-
     <EditText
         android:id="@+id/txt_r_name"
         android:layout_width="match_parent"
@@ -43,5 +37,6 @@
         android:layout_height="wrap_content"
         android:text="Login"
         android:onClick="openHomeActivity"
-        android:backgroundTint="@color/orange"/>
+        android:backgroundTint="@color/black"/>
+
 </LinearLayout>
