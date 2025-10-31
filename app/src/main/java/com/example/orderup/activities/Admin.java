@@ -1,6 +1,9 @@
 package com.example.orderup.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
@@ -52,6 +55,10 @@ public class Admin extends AppCompatActivity {
                     break;
             }
         }).attach();
+    }
+
+    public void openLogin(View view) {
+        startActivity(new Intent(this,MainActivity.class));
     }
 
     private static class AdminPagerAdapter extends FragmentStateAdapter {

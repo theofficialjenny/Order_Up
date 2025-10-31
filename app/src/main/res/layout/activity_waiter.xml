@@ -61,6 +61,15 @@
             android:text="Mark as Served"
             android:backgroundTint="@color/black"
             android:textColor="@android:color/white" />
+        <Button
+            android:id="@+id/btn_signOut"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Log Out"
+            android:backgroundTint="@color/black"
+            android:textColor="@android:color/white"
+            android:onClick="openLogin"/>
 
     </LinearLayout>
 

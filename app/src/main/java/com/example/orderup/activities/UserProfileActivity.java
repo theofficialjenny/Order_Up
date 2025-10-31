@@ -92,7 +92,6 @@ public class UserProfileActivity extends AppCompatActivity {
         });
     }
 
-    // ✅ Simple text adapter
     private static class SimpleTextAdapter extends RecyclerView.Adapter<SimpleTextAdapter.ViewHolder> {
         private final List<String> items;
 
@@ -142,5 +141,9 @@ public class UserProfileActivity extends AppCompatActivity {
 
     public void openCartActivity(View view) {
         startActivity(new Intent(this, CartActivity.class));
+    }
+
+    public void openLoginActivity(View view) {
+        startActivity(new Intent(this, MainActivity.class));
     }
 }

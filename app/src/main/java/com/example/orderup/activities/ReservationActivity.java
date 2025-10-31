@@ -118,8 +118,7 @@ public class ReservationActivity extends AppCompatActivity {
             int hour = timePicker.getHour();
             int minute = timePicker.getMinute();
             String time = String.format("%02d:%02d", hour, minute);
-
-            // Get people from confirm field
+            
             int people = Integer.parseInt(etConfirmPeople.getText().toString().trim());
 
             Map<String, Object> reservationData = new HashMap<>();

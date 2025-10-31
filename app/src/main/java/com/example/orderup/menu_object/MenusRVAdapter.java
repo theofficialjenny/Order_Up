@@ -8,6 +8,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.example.orderup.R;
+import com.google.firebase.firestore.FirebaseFirestore;
+
 import java.util.List;
 
 public class MenusRVAdapter extends RecyclerView.Adapter<MenusRVHolder> {
@@ -54,6 +56,7 @@ public class MenusRVAdapter extends RecyclerView.Adapter<MenusRVHolder> {
                 addToCartListener.onAddToCart(menu);
             }
         });
+
     }
 
     @Override

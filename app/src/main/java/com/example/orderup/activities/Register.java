@@ -97,4 +97,8 @@ public class Register extends AppCompatActivity {
     public void openHomeActivity(View view) {
         startActivity(new Intent(this, HomeActivity.class));
     }
+
+    public void openLogin(View view) {
+        startActivity(new Intent(this, MainActivity.class));
+    }
 }

@@ -38,5 +38,13 @@
         android:text="Login"
         android:onClick="openHomeActivity"
         android:backgroundTint="@color/black"/>
+    <Button
+        android:id="@+id/btn_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:onClick="openLogin"
+        android:backgroundTint="@color/black" />
+
 
 </LinearLayout>

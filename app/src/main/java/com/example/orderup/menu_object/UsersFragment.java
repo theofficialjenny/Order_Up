@@ -51,15 +51,12 @@ public class UsersFragment extends Fragment {
                 .addOnSuccessListener(queryDocumentSnapshots -> {
                     users.clear();
                     for (QueryDocumentSnapshot doc : queryDocumentSnapshots) {
-                        try {
-                            User user = doc.toObject(User.class);
-                            users.add(user);
-                        } catch (Exception e) {
-                            Log.e("UsersFragment", "Error parsing user: " + e.getMessage());
-                        }
+                        User user = doc.toObject(User.class);
+                        users.add(user);
                     }
                     userAdapter.notifyDataSetChanged();
                 })
                 .addOnFailureListener(e -> Log.e("UsersFragment", "Failed to load users", e));
     }
+
 }
